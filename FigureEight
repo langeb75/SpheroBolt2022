@@ -1,0 +1,25 @@
+/*
+Programmer: Mr. Lange
+Date: 3.10.20
+Program: This is a sandbox where I am learning multiple things with the Sphero Bolt.  
+I am using the Sphero Wiki to get information related ot all the commands.  I will be
+having fun creating functions to try out with the Sphero Bolt
+*/
+
+
+/**
+ * upperLoop creates the first/top loop in our Figure 8.
+*/
+async function upperLoop(){
+	setSpeed(80); 				// <--set the speed of robot to 80
+	await spin(355,4.5);		// <--starts the roll at 355 degrees so it will make a loop for 4.5 seconds
+	stopRoll();					// <--stops the roll
+}
+
+
+/**
+ * startProgram function sends the program to your Sphero Bolt
+*/
+async function startProgram() {
+	await upperLoop();			// <--calls the upperLoop Function to run
+}
