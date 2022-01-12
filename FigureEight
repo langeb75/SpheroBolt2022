@@ -18,8 +18,19 @@ async function upperLoop(){
 
 
 /**
+ * lowerLoop creates the second/bottom loop in our Figure 8.
+*/
+async function lowerLoop(){
+	setSpeed(80);				// <--set the speed of robot to 80
+	await spin(-355,4.5);		// <--starts the roll at 355 degrees so it will make a loop for 4.5 seconds
+	stopRoll();					// <--stops the roll
+}
+
+
+/**
  * startProgram function sends the program to your Sphero Bolt
 */
 async function startProgram() {
 	await upperLoop();			// <--calls the upperLoop Function to run
+	await lowerLoop();			// <--calls the lowerLoop Function to run	
 }
